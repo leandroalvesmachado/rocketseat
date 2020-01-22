@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <script>
+        /* Variáveis e dados */
+        var nome = "Diego";
+        var idade = 23;
+        var peso = 80.5;
+        var humano = true;
+        var alunos = ["Diego", "Gabriel", "Lucas"];
+        var aluno = {
+            nome: "Diego",
+            idade: 23,
+            peso: 80.5,
+            humano: true
+        };
+
+        /* Operações matemáticas */
+        var x = 10, y = 5;
+        var soma = x + y;
+        var divisao = x / y;
+        var multiplicacao = x * y;
+        var restoDivisao = x % y;
+        // x = x + 3 é igual x += 3
+        // x = x / 2 é igual x /= 2
+
+        /* Funções */
+        function soma(numero1, numero2) {
+            var resultado = numero1 + numero2;
+            return resultado;
+        }
+
+        var resultado = soma(1, 2);
+
+        /* Condicionais */
+        function retornaSexo(sexo) {
+            if (sexo === "M") {
+                return "Masculino";
+            } else if (sexo === "F") {
+                return "Feminino";
+            } else {
+                return "Outro";
+            }
+        }
+
+        var resultado = retornaSexo("M");
+    
+        /* Operadores lógicos */
+        var sexo = 'M', idade = 23;
+
+        // AND
+        if (sexo === 'M' && idade >= 18) {
+            console.log('OK AND');
+        }
+
+        // OR
+        if (sexo === 'M' || idade >= 18) {
+            console.log('OK OR');
+        }
+
+        // NOT
+        if (sexo !== 'F') {
+            console.log('OK NOT');
+        }
+
+        var masculino;
+        if (sexo === 'M') {
+            masculino = true;
+        } else {
+            masculino = false;
+        }
+
+        var feminino = (sexo === 'F');
+
+        /* Condição ternária */
+        var sexo = 'M';
+        var retorno = (sexo === 'M') ? 'Masculino' : 'Feminino';
+
+        /* Estruturas de repetição */
+        for (var i = 0; i <= 100; i++) {
+            console.log(i);
+        }
+
+        var j = 0;
+        while (j <= 100) {
+            console.log(j);
+            j++;
+        }
+
+        /* Intervalo e timeout */
+        function exibeAlgo() {
+            console.log('Hello World');
+        }
+
+        // funcao sera executada a cada 1 seg (loop)
+        setInterval(exibeAlgo, 1000);
+
+        // executa a função apenas uma vez após 5 segundos
+        setTimeout(exibeAlgo, 5000);
+    </script>
+</body>
+</html>
