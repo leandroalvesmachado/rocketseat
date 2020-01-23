@@ -7,8 +7,64 @@
     <title>Curso Javascript</title>
 </head>
 <body>
+    <div id="app">
+        <button onclick="mostraAlerta()">Me pressione</button>
+        <br><br>
+        <button onmouseover="mostraAlerta()">Me pressione</button>
+        <br><br>
+        <input type="text" onkeypress="mostraAlerta()" />
+        <br><br>
+        <input type="text" name="nome" id="nome" class="nome" />
+        <br><br>
+        <button class="botao">Botão</button>
+        <br><br>
+        <div class="box">box</div>
+    </div>
     <script>
-        
+        function mostraAlerta() {
+            alert('Botão clicado');
+        }
+
+        var inputElement = document.getElementById('nome');
+        console.log(inputElement);
+
+        var inputElements = document.getElementsByTagName('input');
+        console.log(inputElements);
+
+        var inputElementClass = document.getElementsByClassName('nome')[0];
+        console.log(inputElementClass);
+
+        // Procurando input que esta dentro do body e dentro da div app
+        // Serve para buscar elementos em tela
+        var inputElementQuerySelector = document.querySelector('body div#app input');
+        console.log(inputElementQuerySelector);
+
+        // Retorna sempre um unico elemento, o primeiro por exemplo
+        var inputElementQuerySelectorName = document.querySelector('input[name=nome]');
+        console.log(inputElementQuerySelectorName);
+
+        // Procura o elemento button que tem a classe botao
+        var btnElement = document.querySelector('button.botao');
+        btnElement.onclick = function() {
+            alert('botão clicado');
+        }
+
+        // Criando elemento link href e colocando na div app
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href', 'http://www.google.com.br');
+        linkElement.setAttribute('Title', 'Google');
+
+        var textElement = document.createTextNode('Acessar site');
+        linkElement.appendChild(textElement);
+
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(linkElement);
+
+        // Alterando estilos via class
+        var boxElement = document.querySelector('.box');
+        boxElement.style.width = 100;
+        boxElement.style.heigth = 100;
+        boxElement.style.backgroundColor = '#f00';
     </script>
 </body>
 </html>
